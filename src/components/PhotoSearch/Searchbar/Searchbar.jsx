@@ -13,6 +13,7 @@ const Searchbar = ({ onSubmit }) => {
         onSubmit({search});
         reset();
     }
+    // console.log('vle')
 
     const reset = () => {
         setSearch('')
