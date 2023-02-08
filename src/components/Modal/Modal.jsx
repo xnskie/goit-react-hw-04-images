@@ -1,9 +1,7 @@
 import { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { createPortal } from 'react-dom';
 import styles from './modal.module.css'
 
-const modalRoot = document.getElementById('modal-root')
 
 const Modal = ({ closeModal, currentImage }) => {
     const {src, title} = currentImage;
@@ -24,14 +22,11 @@ const Modal = ({ closeModal, currentImage }) => {
     };
 
     return (
-        createPortal(
             <div className={styles.Overlay} onClick={handleClickOnBackdrop}>
                 <div className={styles.Modal}>
                     <img src={src} alt={title} />
                 </div>
-            </div>,
-            modalRoot
-        )
+            </div>
     )
 }
 
