@@ -6,6 +6,7 @@ import styles from './modal.module.css'
 const modalRoot = document.getElementById('modal-root')
 
 const Modal = ({ closeModal, currentImage }) => {
+    const {src, title} = currentImage;
     useEffect(() => {
         const handleKeyDown = e => {
             if (e.code === 'Escape') {
@@ -26,7 +27,7 @@ const Modal = ({ closeModal, currentImage }) => {
         createPortal(
             <div className={styles.Overlay} onClick={handleClickOnBackdrop}>
                 <div className={styles.Modal}>
-                    <img src={currentImage.src} alt={currentImage.title} />
+                    <img src={src} alt={title} />
                 </div>
             </div>,
             modalRoot
